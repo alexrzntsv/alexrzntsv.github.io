@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexey Ryazantsev | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #0f0f0f;
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        /* Profile section */
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e5e5e5;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Text content */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: moveUp 0.8s ease-out;
+        }
+
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInMoveUp 1s ease-out 0.3s forwards;
+        }
+
+        /* Social links */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.6s forwards;
+        }
+
+        .social-link {
+            font-size: 1.8rem;
+            color: #f5f5f5;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            color: #7c7c7c;
+        }
+
+        .resume-btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            background: transparent;
+            border: 2px solid #f5f5f5;
+            color: #f5f5f5;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.9s forwards;
+            text-decoration: none; /* Убираем подчеркивание ссылки */
+            display: inline-block; /* Для правильной работы трансформаций */
+        }
+
+        .resume-btn:hover {
+            background: #f5f5f5;
+            color: #0f0f0f;
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes moveUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInMoveUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .description { font-size: 0.9rem; }
+            .profile-img { width: 150px; height: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="my_photo.jpg" alt="Profile Photo" class="profile-img">
+        
+        <section class="profile-summary">
+            <h1>Alexey Ryazantsev</h1>
+            <h2>ML Engineer / Data Scientist</h2>
+            
+            <div class="about">
+                <h3>Profile</h3>
+                <p>Experienced <strong>ML Engineer/Data Scientist</strong> with 4+ years of expertise in end-to-end ML solutions. Specializes in deep learning, classic ML, AutoML/AutoDL systems and computer vision. </p>
+            </div>
+        
+            <div class="achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li>Developed <strong>AutoML service</strong> at Alfa Bank reducing model deployment time from 2 months to 3 weeks (1500+ models created, 20+ models in production, 3-5% ROC AUC improvement, CI/CD automation)</li>
+                    <li>Created <strong>AutoDL for neural networks</strong> (LSTM, Transformers) with 2 p.p. Gini improvement across tasks</li>
+                    <li>Implemented <strong>LLM solutions</strong>: fine-tuned Mistral/Llama2 for resume ranking system with GPT-4 data labeling</li>
+                    <li>Built <strong>computer vision system</strong> for car damage detection using ViT and custom architectures (+15% F1-score)</li>
+                </ul>
+            </div>
+        
+            <div class="tech-stack">
+                <h3>Technical Stack</h3>
+                <p>Python · PyTorch · Spark · Docker · NLP (LangChain) · Computer Vision (OpenCV) · Airflow · Jenkins · SQL · Git</p>
+            </div>
+        
+            <div class="education">
+                <h3>Education & Certifications</h3>
+                <ul>
+                    <li>Financial University under the Government of Russian Federation (Applied Informatics, until 2025)</li>
+                    <li>Tinkoff Generation: Advanced Deep Learning, Deep Learning, Machine Learning</li>
+                    <li>Stepik: SQL, Statistics</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <div class="social-links">
+            <a href="#" class="social-link" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-link" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-link" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <a href="https://example.com/your-resume.pdf" 
+           class="resume-btn" 
+           target="_blank"
+           rel="noopener noreferrer">
+            View Resume
+        </a>
+    </div>
+</body>
+</html>
